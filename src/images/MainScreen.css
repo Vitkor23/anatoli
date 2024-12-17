@@ -1,0 +1,52 @@
+.main-screen {
+    height: 100vh;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 3em;
+  }
+  
+  .start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: #ff6600;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .start-button:hover {
+    background-color: #ff3300;
+  }
+
+
+.names-list {
+  margin-top: 20px;
+}
+
+.names-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.names-list li {
+  font-size: 33px;
+  margin: 5px 0;
+}
+
+.names.color {
+  color: #e41f1f;
+}
+  

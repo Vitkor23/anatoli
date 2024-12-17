@@ -1,0 +1,133 @@
+/* Контейнер для всей страницы */
+.slot-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #222;
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Контейнер для барабанов в линию */
+  .reels-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Каждый барабан */
+  .reel {
+    width: 150px;
+    height: 316px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #444;
+    border: 2px solid #888;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Символы внутри барабана */
+  .reel img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Анимация для вращения барабана */
+  @keyframes spinReel {
+    0% {
+      transform: translateY(0); /* Начинаем с верхней позиции */
+    }
+    100% {
+      transform: translateY(-300px); /* Прокручиваем символы до конца */
+    }
+  }
+  
+  /* Вращение барабана при isSpinning = true */
+  .spin-active {
+    animation: spinReel 1.5s ease-in-out;
+  }
+  
+  /* Подсветка выигравших линий */
+  @keyframes highlightLine {
+    0% {
+      background-color: transparent;
+    }
+    50% {
+      background-color: yellow; /* Цвет для выделения */
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  
+  /* Стиль для подсветки выигравшей линии */
+  .highlight-line {
+    animation: highlightLine 1s ease-out;
+  }
+  
+  /* Стиль для кнопок */
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #61dafb;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #4fa3d1;
+  }
+  
+  /* Стиль для отображения баланса и ставки */
+  .balance-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+  
+  .bet-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .bet {
+    margin: 0 10px;
+    font-size: 18px;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+  }
+  
+  /* Подсветка всей горизонтальной линии */
+  .reels-container .reel.highlight-line {
+    border: 2px solid yellow; /* Подсветка границы барабана */
+  }
+  
+  /* Для изображений внутри барабана */
+  .reel img.highlight-symbol {
+    background-color: yellow; /* Подсветка каждого изображения */
+  }
+  
