@@ -49,7 +49,7 @@ const SlotScreen = () => {
     setSpinCount((prev) => prev + 1);
 
     // Каждые 10 прокрутов увеличиваем счётчик Пробить Анатолия
-    if ((spinCount + 2) % 10 === 0) {
+    if ((spinCount + 2) % 2 === 0) {
       setProbHit((prev) => prev + 1);
     }
   };
